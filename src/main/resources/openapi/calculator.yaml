@@ -1,0 +1,118 @@
+---
+openapi: 3.0.1
+info:
+  title: Calculator Demo API
+  description: ''
+  termsOfService: terms
+  contact:
+    email: "test@test.dev"
+  license:
+    name: GNU
+  version: '1.0'
+servers:
+  - url: http://localhost:8080
+    description: Generated server url
+tags:
+  - name: Calculator
+    description: Calculator API. Contiene las operaciones para realizar operaciones aritméticas
+paths:
+  "/calculator/add":
+    get:
+      tags:
+        - Calculator
+      summary: Adiciona dos números
+      operationId: addition
+      parameters:
+        - name: firstOperand
+          in: query
+          description: Primer operando
+          required: true
+          schema:
+            type: string
+          example: 1
+        - name: secondOperand
+          in: query
+          description: Segundo operando
+          required: true
+          schema:
+            type: string
+          example: 222
+      responses:
+        '200':
+          description: (OK)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CalculatorResponse'
+        '400':
+          description: (Bad Request) Los datos enviados son incorrectos o hay datos obligatorios no enviados
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+        '500':
+          description: Error en servidor
+  "/calculator/sub":
+    get:
+      tags:
+        - Calculator
+      summary: Resta dos números
+      operationId: subtract
+      parameters:
+        - name: firstOperand
+          in: query
+          description: Primer operando
+          required: true
+          schema:
+            type: string
+          example: 1
+        - name: secondOperand
+          in: query
+          description: Segundo operando
+          required: true
+          schema:
+            type: string
+          example: 222
+      responses:
+        '200':
+          description: (OK)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CalculatorResponse'
+        '400':
+          description: (Bad Request) Los datos enviados son incorrectos o hay datos obligatorios no enviados
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+        '500':
+          description: Error en servidor
+
+components:
+  schemas:
+    CalculatorResponse:
+      type: object
+      properties:
+        result:
+          type: string
+          description: Resultado
+    ApiError:
+      type: object
+      properties:
+        status:
+          type: integer
+          format: int32
+          description: Código de error
+        message:
+          type: string
+          description: Mensaje de error
+        timestamp:
+          type: string
+          format: date-time
+          description: Fecha y hora
+        details:
+          type: array
+          items:
+            type: string
+          description: Información detallada del error
