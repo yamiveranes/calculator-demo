@@ -4,6 +4,9 @@ import org.apache.commons.lang3.math.NumberUtils;
 
 import java.math.BigDecimal;
 
+/**
+ * Clase utilitaria de operaciones aritméticas
+ */
 public class CalculatorUtil {
 
     /**
