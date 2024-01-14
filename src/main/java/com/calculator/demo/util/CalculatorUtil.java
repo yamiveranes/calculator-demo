@@ -15,7 +15,7 @@ public class CalculatorUtil {
      * @param secondOperand segundo operando
      * @return suma de los números
      */
-    public static Number add(String firstOperand, String secondOperand){
+    public static Number addition(String firstOperand, String secondOperand){
         if( !(NumberUtils.isCreatable(firstOperand) && NumberUtils.isCreatable(secondOperand)))
             throw new NumberFormatException("Number format not valid");
 
@@ -28,7 +28,7 @@ public class CalculatorUtil {
      * @param secondOperand segundo operando
      * @return resta dos números
      */
-    public static Number sub(String firstOperand, String secondOperand){
+    public static Number subtract(String firstOperand, String secondOperand){
         if( !(NumberUtils.isCreatable(firstOperand) && NumberUtils.isCreatable(secondOperand)))
             throw new NumberFormatException("Number format not valid");
 
