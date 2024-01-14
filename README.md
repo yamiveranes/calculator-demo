@@ -1,11 +1,15 @@
 # Calculator Demo
 
+------
+
+![](https://img.shields.io/badge/Lenguaje-java-blue.svg?style=for-the-badge)![](https://img.shields.io/badge/version-v0.0.1-success.svg?style=for-the-badge)
+
+------
 
 ## Ejecución
 Para compilar y ejecutar siga los siguientes pasos:
 
-###Instalar dependencias
-1. Instalar dependencia en el repositorio maven librería de traceo.
+1. Instalar librería de traceo en el repositorio maven
      ```bash
      $ mvn install:install-file -Dfile=tracer-1.0.0.jar -DgroupId=io.corp.calculator -DartifactId=tracer -Dversion=1.0.0 -Dpackaging=jar -DgeneratePom=true
      ```
