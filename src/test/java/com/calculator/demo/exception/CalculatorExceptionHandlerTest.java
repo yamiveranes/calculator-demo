@@ -20,7 +20,7 @@ class CalculatorExceptionHandlerTest {
         final String message = "Number format not valid";
         final ResponseEntity<Object> handled = handler.handleNumberFormat(new NumberFormatException(message));
 
-        assertEquals(HttpStatus.NOT_FOUND, handled.getStatusCode());
+        assertEquals(HttpStatus.BAD_REQUEST, handled.getStatusCode());
         assertTrue(handled.getBody() instanceof ApiError);
 
         ApiError err = (ApiError) handled.getBody();

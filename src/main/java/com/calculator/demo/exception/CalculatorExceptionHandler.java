@@ -24,6 +24,6 @@ public class CalculatorExceptionHandler extends ResponseEntityExceptionHandler {
                 ex.getMessage(),
                 LocalDateTime.now(ZoneId.of("UTC")), Collections.emptyList());
 
-        return new ResponseEntity<>(err, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(err, HttpStatus.BAD_REQUEST);
     }
 }
